@@ -21,6 +21,12 @@
       align-items: center;
     }
 
+    .error {
+      color: #ff4d4d;
+      margin-bottom: 10px;
+      font-size: 0.95em;
+    }
+
     .login-container {
       background: rgba(255, 255, 255, 0.05);
       border-radius: 20px;
@@ -90,6 +96,9 @@
 <body>
   <div class="login-container">
     <h2>Employee Login</h2>
+    {% if error %}
+      <p class="error">{{ error }}</p>
+    {% endif %}
     <form action="/employee-login" method="POST">
       <input type="text" name="username" placeholder="Username" required>
       <input type="password" name="password" placeholder="Password" required>
